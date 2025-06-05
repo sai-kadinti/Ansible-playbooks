@@ -1,0 +1,15 @@
+---
+- name : Create a user in nodes
+  hosts : all
+  tasks :
+    - name : user add
+      user :
+        name : sai
+        password : sai123
+        home : /tmp/sai
+        uid : 6303
+        comment : "Created using playbook"
+        shell : /bin/bash
+...
+      
+

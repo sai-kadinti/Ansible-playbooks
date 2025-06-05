@@ -1,0 +1,27 @@
+---
+- name: Configure apache2
+  hosts: all
+  tasks:
+    - name: install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: edit index.html
+      copy:
+        content: /home/ubuntu/playbooks/index.html
+        dest: /var/www/html/index.html
+    - name: restart apache2
+      service:
+        name: apache2
+        state: restarted
+    - name: check url in server1
+      uri:
+        url: http://172.31.87.13/
+        status_code: 200
+    - name: check url in server2
+      uri:
+        url: http://172.31.92.132/
+        status_code: 200
+
+...
