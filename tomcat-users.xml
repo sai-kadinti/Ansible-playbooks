@@ -1,0 +1,4 @@
+<tomcat-users>
+     <user username="sai-aws" password="admin123" roles="manager-script"/>
+</tomcat-users>
+
