@@ -1,0 +1,9 @@
+---
+- name: user add/del through single host vars
+  hosts: 172.31.87.13
+  tasks:
+    - name: user add/del
+      user:
+        name: "{{a}}"
+        state: "{{b}}"
+...

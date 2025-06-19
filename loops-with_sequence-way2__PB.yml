@@ -1,0 +1,10 @@
+---
+- name: sw install/uninstall by with_sequence way2
+  hosts: all
+  tasks:
+    - name: using apt
+      apt:
+        name: ["tree","git","maven"]
+        state: present
+        update_cache: no
+...

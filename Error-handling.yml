@@ -1,0 +1,20 @@
+---
+- name: implement Error-Handling
+  hosts: all
+  tasks:
+    - block :
+      - name: install unknown_software
+        apt:
+          name: unknown_software
+          state: present
+      rescue:
+        - name: install tree
+          apt:
+            name: tree
+            state: present
+      always:
+        - name: display output
+          debug:
+            msg : tree installed
+...
+ 

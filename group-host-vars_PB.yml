@@ -1,0 +1,9 @@
+---
+- name: useradd or del
+  hosts: dbservers
+  tasks:
+    - name: useradd or delete
+      user:
+        name: "{{a}}"
+        state: "{{b}}"
+...

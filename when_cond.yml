@@ -1,0 +1,17 @@
+---
+- name : Checking if file f1 exists or not, if not create f1 file
+  hosts : all
+  tasks :
+  - name : check for f1 file
+    stat:
+      path : /home/ubuntu/f1
+    register : a
+  - name : print the status of above
+    debug :
+      var : a
+  - name: Create a file f1
+    file:
+      name: /home/ubuntu/f1
+      state: touch
+    when : a.stat.exists == false
+...

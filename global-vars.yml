@@ -1,0 +1,10 @@
+---
+- name: install/uninstall a s/w using global variables
+  hosts: all
+  tasks:
+    - name: install/uninstall s/w
+      apt:
+        name: "{{sw}}"
+        state: "{{st}}"
+        update_cache: "{{up}}"
+...

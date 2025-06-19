@@ -1,0 +1,11 @@
+---
+- name : create vault playbook
+  hosts: all
+  tasks:
+    - name : command
+      command : whoami
+      register: a
+    - name: show output
+      debug:
+        var : a
+...

@@ -18,19 +18,22 @@
         dest: /etc/tomcat10
     - name: replcae ports
       replace:
-        regexp: 9090
-        replace: 9999
+        regexp: 9999
+        replace: 8888
         path: /etc/tomcat10/server.xml
     - name: restart the service
       service:
         name: tomcat10
         state: restarted
+    - name: pause for 1 sec
+      pause:
+        minutes: 1
     - name: check url of server1
       uri:
-        url: http://172.31.92.132:9090/
+        url: http://172.31.92.132:8888/
         status_code: 200
     - name: check url of server2
       uri:
-        url: http://172.31.87.13:9090/
+        url: http://172.31.87.13:8888/
         status_code: 200
 ...

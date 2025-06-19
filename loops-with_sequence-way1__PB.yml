@@ -1,0 +1,14 @@
+---
+- name: install or uninstall sw through with_sequence loop
+  hosts: all
+  tasks:
+    - name: using apt
+      apt:
+        name: "{{item}}"
+        state: present
+        update_cache: no
+      with_items:
+        - tree
+        - git
+        - maven
+...
