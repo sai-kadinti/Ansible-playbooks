@@ -1,0 +1,19 @@
+---
+- name:
+  hosts: all
+  become: yes
+  serial: 2
+  tasks:
+    - name: install git in ubuntu servers
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+    - name: install git on RHEL servers
+      yum:
+        name: git
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "RedHat"
+...

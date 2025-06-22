@@ -1,0 +1,9 @@
+---
+- name: Call child playbooks
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+   - name: Call child playbook
+     include_tasks: child_pb.yml
+...

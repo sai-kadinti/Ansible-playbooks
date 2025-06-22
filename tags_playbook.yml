@@ -1,0 +1,21 @@
+---
+- name: Implementing tags
+  hosts: all
+  tasks:
+    - name: Install tree
+      apt:
+        name: tree
+        state: present
+      tags: install_tree #tag_name
+    - name: useadd
+      user:
+        name : anu
+        password: 1234
+      tags: 
+        - user_add #tag name
+        - never #never or always
+    - name: copy passwd file
+      copy:
+        src: /etc/passwd
+        dest: /temp
+...

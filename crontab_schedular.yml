@@ -1,0 +1,10 @@
+---
+- name: Implement crontab schedular
+  hosts: all
+  become: yes
+  tasks:
+    - name: clone git repo
+      git:
+        repo: https://github.com/sai-kadinti/Declarative-Pipelines.git
+        dest: /home/ubuntu/mygit
+...

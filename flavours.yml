@@ -1,0 +1,12 @@
+---
+- name: Show flavour of Linux server
+  hosts: all
+  become: yes
+  tasks:
+    - name: show output
+      debug:
+        var: ansible_distribution
+    - name: show OS version
+      debug:
+        var: ansible_distribution_version
+...
