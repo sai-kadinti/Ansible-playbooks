@@ -1,0 +1,7 @@
+---
+- name: Configuring tomcat10
+  hosts: all
+  become: yes
+  roles:
+    - tomcat10
+...

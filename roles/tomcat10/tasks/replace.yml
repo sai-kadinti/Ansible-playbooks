@@ -1,0 +1,10 @@
+---
+- name: changing port from 8080 to 9090
+  replace:
+    regexp: "{{item.a}}"
+    replace: "{{item.b}}"
+    path: "{{item.c}}"
+  with_items:
+    - {a: "{{exp}}",b: "{{np}}",c: "{{path}}"}
+...
+

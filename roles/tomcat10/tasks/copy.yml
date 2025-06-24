@@ -1,0 +1,8 @@
+---
+- name: copy the tomcat-users.xml
+  copy:
+    src: "{{item.a}}"
+    dest: "{{item.b}}"
+  with_items:
+    - {a: "{{src}}",b: "{{dest}}"}
+...

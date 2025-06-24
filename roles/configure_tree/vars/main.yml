@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for configure_tree
+pkg: tree
+st: present
+cache: yes
+...

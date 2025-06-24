@@ -1,0 +1,7 @@
+---
+- name:
+  pause:
+    seconds: "{{item}}"
+  with_items:
+    - "{{time}}"
+...

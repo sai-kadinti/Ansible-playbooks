@@ -1,0 +1,19 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for configure-tomcat10
+t: tomcat10
+t10: tomcat10-admin
+st: present
+chy: yes
+chn: no
+src: tomcat-users.xml
+dest: /etc/tomcat10
+exp: 8080
+np: 9090
+path: /etc/tomcat10/server.xml
+rst: restarted
+time: 30
+url1: http://172.31.87.13:9090
+url2: http://172.31.92.132:9090
+code: 200
+...

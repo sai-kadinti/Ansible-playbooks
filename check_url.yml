@@ -1,0 +1,13 @@
+---
+- name: check url response
+  hosts: all
+  become: yes
+  tasks:
+    - name: using uri module
+      uri:
+        url: "{{item}}"
+        status_code: 200
+      with_items:
+        - "{{url1}}"
+        - "{{url2}}"
+...

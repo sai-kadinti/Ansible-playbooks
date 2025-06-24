@@ -1,0 +1,11 @@
+---
+- name: restart tomcat
+  service:
+    name: "{{ item.a }}"
+    state: "{{ item.b }}"
+  with_items:
+    - { a: "{{ t }}", b: "{{ rst }}" }
+  notify:
+    - check_urls
+...
+

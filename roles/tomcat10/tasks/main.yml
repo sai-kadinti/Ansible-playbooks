@@ -1,0 +1,11 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for configure-tomcat10
+- include_tasks: "{{item}}"
+  with_items:
+    - apt.yml
+    - copy.yml
+    - replace.yml
+    - service.yml
+    - pause.yml
+...

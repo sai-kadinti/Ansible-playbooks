@@ -1,0 +1,12 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for configure-tomcat
+- name: check_urls
+  uri:
+    url: "{{item.a}}"
+    status_code: "{{item.b}}"
+  with_items:
+    - {a: "{{url1}}",b: "{{code}}"}
+    - {a: "{{url2}}",b: "{{code}}"}
+...
+
